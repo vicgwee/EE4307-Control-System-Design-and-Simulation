@@ -1,0 +1,294 @@
+%implements s3_b0_2dy1c_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%<SLibCGIRAccessLocalVar(0, 0, "")> %% ol3r0jpsro
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T bgou1pdlu4[9];
+real_T hljdpnid1i[6];
+real_T nsufjxqi4n[3];
+real_T B1;
+real_T B2;
+real_T Fy_r;
+real_T FzCalc_idx_0;
+real_T FzCalc_idx_1;
+real_T b_B2;
+real_T cpixr4pucf_idx_2;
+real_T ipqfld4vhv_idx_0;
+real_T ipqfld4vhv_idx_1;
+real_T k40tnuuexk;
+real_T kpfktk1wfk;
+real_T ksu3iw4onz;
+real_T kvpbpcqgp3_idx_0;
+real_T kvpbpcqgp3_idx_1;
+real_T z1_data;
+real_T z_data;
+int32_T loop_ub;
+int_T iy;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS3B0 = OpaqueTLCBlockFcn("Outputs", 3, 0, 0, 3, 0)
+%assign tlcOutputsFcnOfS3B1 = OpaqueTLCBlockFcn("Outputs", 3, 1, 0, 3, 1)
+%assign tlcOutputsFcnOfS3B2 = OpaqueTLCBlockFcn("Outputs", 3, 2, 0, 3, 2)
+%assign tlcOutputsFcnOfS3B3 = OpaqueTLCBlockFcn("Outputs", 3, 3, 0, 3, 3)
+%assign tlcOutputsFcnOfS3B5 = OpaqueTLCBlockFcn("Outputs", 3, 5, 0, 3, 4)
+%assign tlcOutputsFcnOfS3B6 = OpaqueTLCBlockFcn("Outputs", 3, 6, 0, 3, 5)
+%<SLibGetRootInportsFromFile(system, TLC_FALSE)>
+%<SLibGenerateExtModeOutput(system)>
+rtB.ouhsqvc41g = 0.0;
+rtB.ouhsqvc41g += rtP.TransferFcn_C * rtX.cf0gzqsoql;
+rtB.b5thnjmafh[0] = rtB.clzn2gnrjk;
+if (%<(LibIsMajorTimeStep())>) {
+    if (rtDW.agn4uwb4us != 0) {
+        rtX.b5htlxremy[0] = rtB.m3zzympzjj[0];
+        rtX.b5htlxremy[1] = rtB.m3zzympzjj[1];
+        rtX.b5htlxremy[2] = rtB.m3zzympzjj[2];
+        rtX.b5htlxremy[3] = rtB.m3zzympzjj[3];
+    }
+    rtB.b5thnjmafh[1] = rtX.b5htlxremy[1];
+    rtB.b5thnjmafh[2] = rtX.b5htlxremy[2];
+    rtB.b5thnjmafh[3] = rtX.b5htlxremy[3];
+} else {
+    rtB.b5thnjmafh[1] = rtX.b5htlxremy[1];
+    rtB.b5thnjmafh[2] = rtX.b5htlxremy[2];
+    rtB.b5thnjmafh[3] = rtX.b5htlxremy[3];
+}
+rtB.gt0pdqhxze = 0.0;
+rtB.gt0pdqhxze += rtP.TransferFcn2_C * rtX.egjnui00l1;
+rtB.gwius4i0a3 = 0.0;
+rtB.gwius4i0a3 += rtP.TransferFcn1_C * rtX.m5gy2f0bvo;
+rtB.kxpwuhco3h = 0.0;
+rtB.kxpwuhco3h += rtP.TransferFcn4_C * rtX.oty5zwb0vf;
+rtB.mul2pumw51 = 0.0;
+rtB.mul2pumw51 += rtP.TransferFcn3_C * rtX.eeogsoscyb;
+ol3r0jpsro = %<(SLibCG_SE(LibGetT()))>;
+%<tlcOutputsFcnOfS3B0>\
+if (%<(SLibCGIRIsSampleHit(1, 3))>) {
+%<tlcOutputsFcnOfS3B1>\
+%<tlcOutputsFcnOfS3B2>\
+%<tlcOutputsFcnOfS3B3>\
+%<tlcOutputsFcnOfS3B5>\
+%<tlcOutputsFcnOfS3B6>\
+}
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &k40tnuuexk, &kpfktk1wfk);
+ksu3iw4onz = rtB.b5thnjmafh[0] - (kpfktk1wfk * rtB.m3ploiei5x[0] + k40tnuuexk * rtB.m3ploiei5x[1]);
+kvpbpcqgp3_idx_0 = ksu3iw4onz;
+ipqfld4vhv_idx_0 = ksu3iw4onz * ksu3iw4onz;
+ksu3iw4onz = rtB.b5thnjmafh[1] - (kpfktk1wfk * rtB.m3ploiei5x[1] - k40tnuuexk * rtB.m3ploiei5x[0]);
+kvpbpcqgp3_idx_1 = ksu3iw4onz;
+ipqfld4vhv_idx_1 = ksu3iw4onz * ksu3iw4onz;
+ksu3iw4onz = rtP.Constant_Value_faooqcp34q - rtB.m3ploiei5x[2];
+k40tnuuexk = muDoubleScalarSqrt((ipqfld4vhv_idx_0 + ipqfld4vhv_idx_1) + ksu3iw4onz * ksu3iw4onz);
+k40tnuuexk *= k40tnuuexk;
+hljdpnid1i[0] = rtP.VehicleBody3DOFSingleTrack_Cd;
+kpfktk1wfk = muDoubleScalarAtan2(kvpbpcqgp3_idx_1, kvpbpcqgp3_idx_0);
+hljdpnid1i[1] = look1_binlcpw(kpfktk1wfk, rtP.VehicleBody3DOFSingleTrack_beta_w, rtP.VehicleBody3DOFSingleTrack_Cs, 30U);
+hljdpnid1i[2] = rtP.VehicleBody3DOFSingleTrack_Cl;
+hljdpnid1i[3] = look1_binlxpw(kpfktk1wfk, rtP.Crm_bp01Data, rtP.Crm_tableData, 1U);
+if (kvpbpcqgp3_idx_0 >= rtP.Switch_Threshold) {
+    kvpbpcqgp3_idx_0 = rtP.Constant4_Value[0];
+} else {
+    kvpbpcqgp3_idx_0 = rtB.gypybvq1kh[0];
+}
+if (kvpbpcqgp3_idx_1 >= rtP.Switch_Threshold) {
+    kvpbpcqgp3_idx_1 = rtP.Constant4_Value[1];
+} else {
+    kvpbpcqgp3_idx_1 = rtB.gypybvq1kh[1];
+}
+hljdpnid1i[4] = kvpbpcqgp3_idx_0 * rtP.VehicleBody3DOFSingleTrack_Cpm;
+hljdpnid1i[5] = look1_binlxpw(kpfktk1wfk, rtP.VehicleBody3DOFSingleTrack_beta_w, rtP.VehicleBody3DOFSingleTrack_Cym, 30U);
+kpfktk1wfk = 0.5 * rtP.VehicleBody3DOFSingleTrack_Af * rtP.VehicleBody3DOFSingleTrack_Pabs / rtP.DragForce_R;
+for (iy = 0; iy < 6; iy++) {
+    hljdpnid1i[iy] = k40tnuuexk * hljdpnid1i[iy] / rtP.VehicleBody3DOFSingleTrack_Tair * kpfktk1wfk;
+}
+kpfktk1wfk = rtP.VehicleBody3DOFSingleTrack_a + rtP.VehicleBody3DOFSingleTrack_b;
+kvpbpcqgp3_idx_0 = -(kvpbpcqgp3_idx_0 * hljdpnid1i[0]);
+ipqfld4vhv_idx_1 = -(hljdpnid1i[4] * kpfktk1wfk);
+kvpbpcqgp3_idx_1 = -(kvpbpcqgp3_idx_1 * hljdpnid1i[1]);
+ipqfld4vhv_idx_0 = -(hljdpnid1i[5] * kpfktk1wfk);
+if (ksu3iw4onz >= rtP.Switch_Threshold) {
+    ksu3iw4onz = rtP.Constant4_Value[2];
+} else {
+    ksu3iw4onz = rtB.gypybvq1kh[2];
+}
+ksu3iw4onz = -(ksu3iw4onz * hljdpnid1i[2]);
+/* Unit Conversion - from: rad to: rad
+ Expression: output = (1*input) + (0) */
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &k40tnuuexk, &nsufjxqi4n[0]);
+muDoubleScalarSinCos(rtP.Constant7_Value, &kpfktk1wfk, &nsufjxqi4n[1]);
+muDoubleScalarSinCos(rtP.Constant2_Value, &cpixr4pucf_idx_2, &nsufjxqi4n[2]);
+if (%<(LibIsMajorTimeStep())>) {
+    if (rtDW.iob1xc4aiv != 0) {
+        rtX.coek203bwg[0] = rtB.afhriw5llw[0];
+        rtX.coek203bwg[1] = rtB.afhriw5llw[1];
+    }
+    FzCalc_idx_0 = rtX.coek203bwg[0];
+    FzCalc_idx_1 = rtX.coek203bwg[1];
+} else {
+    FzCalc_idx_0 = rtX.coek203bwg[0];
+    FzCalc_idx_1 = rtX.coek203bwg[1];
+}
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &nsufjxqi4n[0], &k40tnuuexk);
+muDoubleScalarSinCos(rtP.Constant7_Value, &nsufjxqi4n[1], &kpfktk1wfk);
+muDoubleScalarSinCos(rtP.Constant2_Value, &nsufjxqi4n[2], &cpixr4pucf_idx_2);
+bgou1pdlu4[0] = kpfktk1wfk * k40tnuuexk;
+bgou1pdlu4[1] = nsufjxqi4n[2] * nsufjxqi4n[1] * k40tnuuexk - cpixr4pucf_idx_2 * nsufjxqi4n[0];
+bgou1pdlu4[2] = cpixr4pucf_idx_2 * nsufjxqi4n[1] * k40tnuuexk + nsufjxqi4n[2] * nsufjxqi4n[0];
+bgou1pdlu4[3] = kpfktk1wfk * nsufjxqi4n[0];
+bgou1pdlu4[4] = nsufjxqi4n[2] * nsufjxqi4n[1] * nsufjxqi4n[0] + cpixr4pucf_idx_2 * k40tnuuexk;
+bgou1pdlu4[5] = cpixr4pucf_idx_2 * nsufjxqi4n[1] * nsufjxqi4n[0] - nsufjxqi4n[2] * k40tnuuexk;
+bgou1pdlu4[6] = -nsufjxqi4n[1];
+bgou1pdlu4[7] = nsufjxqi4n[2] * kpfktk1wfk;
+bgou1pdlu4[8] = cpixr4pucf_idx_2 * kpfktk1wfk;
+for (iy = 0; iy < 3; iy++) {
+    nsufjxqi4n[iy] = bgou1pdlu4[3 * iy + 2] * rtB.atbfjnswpb[2] + (bgou1pdlu4[3 * iy + 1] * rtB.atbfjnswpb[1] + bgou1pdlu4[3 * iy] * rtB.atbfjnswpb[0]);
+}
+rtB.aa1542urvs[0] = FzCalc_idx_0 + nsufjxqi4n[0];
+rtB.aa1542urvs[1] = FzCalc_idx_1 + nsufjxqi4n[1];
+rtB.aa1542urvs[2] = rtP.Constant_Value_dps1vni0dt + nsufjxqi4n[2];
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &nsufjxqi4n[0], &k40tnuuexk);
+muDoubleScalarSinCos(rtP.Constant7_Value, &nsufjxqi4n[1], &kpfktk1wfk);
+muDoubleScalarSinCos(rtP.Constant2_Value, &nsufjxqi4n[2], &cpixr4pucf_idx_2);
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &k40tnuuexk, &nsufjxqi4n[0]);
+muDoubleScalarSinCos(rtP.Constant7_Value, &kpfktk1wfk, &nsufjxqi4n[1]);
+muDoubleScalarSinCos(rtP.Constant2_Value, &cpixr4pucf_idx_2, &nsufjxqi4n[2]);
+rtB.pg3od0lhfi[0] = rtB.b5thnjmafh[0] * muDoubleScalarCos(rtB.b5thnjmafh[2]) - rtB.b5thnjmafh[1] * muDoubleScalarSin(rtB.b5thnjmafh[2]);
+rtB.pg3od0lhfi[1] = rtB.b5thnjmafh[0] * muDoubleScalarSin(rtB.b5thnjmafh[2]) + rtB.b5thnjmafh[1] * muDoubleScalarCos(rtB.b5thnjmafh[2]);
+muDoubleScalarSinCos(rtB.b5thnjmafh[2], &k40tnuuexk, &nsufjxqi4n[0]);
+muDoubleScalarSinCos(rtP.Constant7_Value, &k40tnuuexk, &nsufjxqi4n[1]);
+muDoubleScalarSinCos(rtP.Constant2_Value, &k40tnuuexk, &nsufjxqi4n[2]);
+k40tnuuexk = rtB.b5thnjmafh[3];
+kpfktk1wfk = muDoubleScalarAbs(rtB.b5thnjmafh[0]);
+iy = 0;
+if (kpfktk1wfk < rtP.VehicleBody3DOFSingleTrack_xdot_tol) {
+    iy = 1;
+}
+if (0 <= iy - 1) {
+    z_data = kpfktk1wfk / rtP.VehicleBody3DOFSingleTrack_xdot_tol;
+    z1_data = z_data;
+}
+if (0 <= iy - 1) {
+    z1_data = z_data * z_data;
+}
+loop_ub = iy - 1;
+for (iy = 0; iy <= loop_ub; iy++) {
+    z1_data = 2.0 * rtP.VehicleBody3DOFSingleTrack_xdot_tol / (3.0 - z1_data);
+}
+cpixr4pucf_idx_2 = kpfktk1wfk;
+if (kpfktk1wfk < rtP.VehicleBody3DOFSingleTrack_xdot_tol) {
+    cpixr4pucf_idx_2 = z1_data;
+}
+kpfktk1wfk = muDoubleScalarAtan2(rtP.VehicleBody3DOFSingleTrack_a * rtB.b5thnjmafh[3] + rtB.b5thnjmafh[1], cpixr4pucf_idx_2) - muDoubleScalarTanh(4.0 * rtB.b5thnjmafh[0]) * rtB.jvjpqeq0dr;
+cpixr4pucf_idx_2 = muDoubleScalarAtan2(rtB.b5thnjmafh[1] - rtP.VehicleBody3DOFSingleTrack_b * rtB.b5thnjmafh[3], cpixr4pucf_idx_2) - muDoubleScalarTanh(4.0 * rtB.b5thnjmafh[0]) * 0.0;
+FzCalc_idx_0 = 0.0;
+FzCalc_idx_1 = 0.0;
+for (iy = 0; iy < 6; iy++) {
+    if (iy == 0) {
+        B1 = (((kvpbpcqgp3_idx_0 - (0.0 - k40tnuuexk * 0.0) * rtP.VehicleBody3DOFSingleTrack_m) - rtP.VehicleBody3DOFSingleTrack_m * rtP.VehicleBody3DOFSingleTrack_g * 0.0) * rtP.VehicleBody3DOFSingleTrack_h - 0.0 * rtP.VehicleBody3DOFSingleTrack_h) - ipqfld4vhv_idx_1;
+        B2 = -ksu3iw4onz - rtP.VehicleBody3DOFSingleTrack_m * rtP.VehicleBody3DOFSingleTrack_g;
+        FzCalc_idx_0 = -(-(B1 - B2 * rtP.VehicleBody3DOFSingleTrack_b) / (rtP.VehicleBody3DOFSingleTrack_a + rtP.VehicleBody3DOFSingleTrack_b));
+        if (FzCalc_idx_0 < 0.0) {
+            FzCalc_idx_0 = 0.0;
+        }
+        FzCalc_idx_1 = -((B2 * rtP.VehicleBody3DOFSingleTrack_a + B1) / (rtP.VehicleBody3DOFSingleTrack_a + rtP.VehicleBody3DOFSingleTrack_b));
+        if (FzCalc_idx_1 < 0.0) {
+            FzCalc_idx_1 = 0.0;
+        }
+    }
+    B2 = -rtP.VehicleBody3DOFSingleTrack_Cy_f * kpfktk1wfk * rtB.mgtbdic4jn[0] * FzCalc_idx_0 / rtP.VehicleBody3DOFSingleTrack_Fznom;
+    Fy_r = -rtP.VehicleBody3DOFSingleTrack_Cy_r * cpixr4pucf_idx_2 * rtB.mgtbdic4jn[1] * FzCalc_idx_1 / rtP.VehicleBody3DOFSingleTrack_Fznom;
+    %<(SLibCGCallSubFcn("mkh2pstbhu", ["B2", "rtP.vehiclemodel_Fxtire_sat * FzCalc_idx_0 / rtP.VehicleBody3DOFSingleTrack_Fznom", "rtP.vehiclemodel_Fytire_sat * FzCalc_idx_0 / rtP.VehicleBody3DOFSingleTrack_Fznom", "&b_B2", "&B1"], 0, 3, 0))>;
+    %<(SLibCGCallSubFcn("mkh2pstbhu", ["Fy_r", "rtP.vehiclemodel_Fxtire_sat * FzCalc_idx_1 / rtP.VehicleBody3DOFSingleTrack_Fznom", "rtP.vehiclemodel_Fytire_sat * FzCalc_idx_1 / rtP.VehicleBody3DOFSingleTrack_Fznom", "&b_B2", "&FzCalc_idx_0"], 0, 3, 1))>;
+    B2 = -(0.0 * muDoubleScalarCos(rtB.jvjpqeq0dr) - B1 * muDoubleScalarSin(rtB.jvjpqeq0dr)) * muDoubleScalarSin(rtB.jvjpqeq0dr) + B2 * muDoubleScalarCos(rtB.jvjpqeq0dr);
+    Fy_r += -(0.0 - FzCalc_idx_0 * 0.0) * 0.0;
+    B1 = ((B2 + Fy_r) + kvpbpcqgp3_idx_1) / rtP.VehicleBody3DOFSingleTrack_m + -rtB.b5thnjmafh[0] * k40tnuuexk;
+    B2 = ((rtP.VehicleBody3DOFSingleTrack_a * B2 - rtP.VehicleBody3DOFSingleTrack_b * Fy_r) + ipqfld4vhv_idx_0) / rtP.VehicleBody3DOFSingleTrack_Izz;
+    Fy_r = (((kvpbpcqgp3_idx_0 - (0.0 - k40tnuuexk * rtB.b5thnjmafh[1]) * rtP.VehicleBody3DOFSingleTrack_m) - rtP.VehicleBody3DOFSingleTrack_m * rtP.VehicleBody3DOFSingleTrack_g * 0.0) * rtP.VehicleBody3DOFSingleTrack_h - 0.0 * rtP.VehicleBody3DOFSingleTrack_h) - ipqfld4vhv_idx_1;
+    b_B2 = -ksu3iw4onz - rtP.VehicleBody3DOFSingleTrack_m * rtP.VehicleBody3DOFSingleTrack_g;
+    FzCalc_idx_0 = -(-(Fy_r - b_B2 * rtP.VehicleBody3DOFSingleTrack_b) / (rtP.VehicleBody3DOFSingleTrack_a + rtP.VehicleBody3DOFSingleTrack_b));
+    if (FzCalc_idx_0 < 0.0) {
+        FzCalc_idx_0 = 0.0;
+    }
+    FzCalc_idx_1 = -((b_B2 * rtP.VehicleBody3DOFSingleTrack_a + Fy_r) / (rtP.VehicleBody3DOFSingleTrack_a + rtP.VehicleBody3DOFSingleTrack_b));
+    if (FzCalc_idx_1 < 0.0) {
+        FzCalc_idx_1 = 0.0;
+    }
+}
+rtB.izd04ckgew[0] = 0.0;
+rtB.izd04ckgew[1] = B1;
+rtB.izd04ckgew[2] = rtB.b5thnjmafh[3];
+rtB.izd04ckgew[3] = B2;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+rtB.afhriw5llw[0] = rtP.VehicleBody3DOFSingleTrack_X_o;
+rtB.afhriw5llw[1] = rtP.VehicleBody3DOFSingleTrack_Y_o;
+rtB.atbfjnswpb[0] = rtP.VehicleBody3DOFSingleTrack_longOff;
+rtB.atbfjnswpb[1] = rtP.VehicleBody3DOFSingleTrack_latOff;
+rtB.atbfjnswpb[2] = rtP.VehicleBody3DOFSingleTrack_vertOff;
+rtB.m4wge5dbv2[0] = -rtP.Constant_Value_fwufbzi5wk;
+rtB.m4wge5dbv2[1] = rtP.Constant4_Value_hbps1w55ra;
+rtB.m4wge5dbv2[2] = rtP.VehicleBody3DOFSingleTrack_h - rtP.Constant3_Value;
+rtB.gpqhriivo0 = rtP.Constant4_Value_bxzrn424zx * rtB.m4wge5dbv2[1];
+rtB.klneczqrze = rtP.Constant5_Value * rtB.m4wge5dbv2[2];
+rtB.otyvqd42hb = rtP.Constant4_Value_bxzrn424zx * rtB.m4wge5dbv2[2];
+rtB.da2dnlhscq = rtP.Constant5_Value * rtB.m4wge5dbv2[0];
+rtB.mgtbdic4jn[0] = rtP.VehicleBody3DOFSingleTrack_mu;
+rtB.mgtbdic4jn[1] = rtP.VehicleBody3DOFSingleTrack_mu;
+rtB.base02e1se[0] = 0.0;
+rtB.base02e1se[1] = 0.0;
+rtB.orjgg4ybfa[0] = 0.0;
+rtB.orjgg4ybfa[1] = 0.0;
+/* Unit Conversion - from: m/s to: m/s
+ Expression: output = (1*input) + (0) */
+rtB.clzn2gnrjk = rtP.Constant_Value;
+rtB.m3zzympzjj[0] = rtB.clzn2gnrjk;
+rtB.gypybvq1kh[0] = -rtP.Constant4_Value[0];
+rtB.m3zzympzjj[1] = rtP.VehicleBody3DOFSingleTrack_ydot_o;
+rtB.gypybvq1kh[1] = -rtP.Constant4_Value[1];
+rtB.m3zzympzjj[2] = rtP.VehicleBody3DOFSingleTrack_psi_o;
+rtB.gypybvq1kh[2] = -rtP.Constant4_Value[2];
+rtB.m3zzympzjj[3] = rtP.VehicleBody3DOFSingleTrack_r_o;
+rtB.m3ploiei5x[0] = 0.0;
+rtB.m3ploiei5x[1] = 0.0;
+rtB.m3ploiei5x[2] = 0.0;
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput2LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function OutputsFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs0(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs1(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

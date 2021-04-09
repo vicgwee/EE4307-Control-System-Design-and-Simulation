@@ -1,0 +1,41 @@
+%implements s3_b0_2dy1c_Functions "C"
+
+%function mkh2pstbhu_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T b_a;
+real_T c_a;
+real_T theta_Ftire;
+theta_Ftire = muDoubleScalarAtan2(0.0, Ftire_y);
+b_a = b_Fxtire_sat * muDoubleScalarCos(theta_Ftire);
+c_a = b_Fytire_sat * muDoubleScalarSin(theta_Ftire);
+theta_Ftire = b_Fxtire_sat * b_Fytire_sat / muDoubleScalarSqrt(b_a * b_a + c_a * c_a) * muDoubleScalarCos(theta_Ftire);
+*Ftire_xs = 0.0;
+*Ftire_ys = Ftire_y;
+if (muDoubleScalarAbs(Ftire_y) > muDoubleScalarAbs(theta_Ftire)) {
+    *Ftire_ys = theta_Ftire;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void mkh2pstbhu(\
+%assign comma = ""
+%<comma>real_T Ftire_y\
+%assign comma = ", "
+%<comma>real_T b_Fxtire_sat\
+%assign comma = ", "
+%<comma>real_T b_Fytire_sat\
+%assign comma = ", "
+%<comma>real_T *Ftire_xs\
+%assign comma = ", "
+%<comma>real_T *Ftire_ys\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
