@@ -3,7 +3,7 @@ clear
 
 %reference model params
 ratio_m = 1; 
-w_m     = 2; 
+w_m     = 4; 
 para_m  = [ratio_m, w_m];
 A_m     = [0, 1;
           -w_m^2, -2*ratio_m*w_m];

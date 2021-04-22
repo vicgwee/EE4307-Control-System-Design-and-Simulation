@@ -1,0 +1,25 @@
+
+m = 10;
+Iz = 2;
+xg = 0.01;
+yg = 0.01;
+Lh = 0.145;
+Wh = 0.1;
+gma1 = - pi/4;
+gma2 = pi/4;
+gma3 = 3 * pi/4;
+gma4 = -3 * pi/4;
+Xu = -7.2;
+Yv = -7.7;
+Nr = -5;
+Xu_dot = -2.9;
+Yv_dot = -3;
+Nr_dot = -3.3;
+Rref = 5;
+rref = pi/60;
+rho0 = -pi/2;
+Vmin = 0;
+Vmax = 0.1; 
+
+M_A = -diag((Xu_dot, Yv_dot, Nr_dot));
+C_hA
